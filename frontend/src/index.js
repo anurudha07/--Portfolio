@@ -29,7 +29,7 @@ function Root() {
   return (
     <ThemeProvider theme={themeMode === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <BrowserRouter basename=".">
+      <BrowserRouter basename={isProd ? "/--Portfolio" : "/"}>
         <App themeMode={themeMode} toggleTheme={toggleTheme} />
       </BrowserRouter>
     </ThemeProvider>
