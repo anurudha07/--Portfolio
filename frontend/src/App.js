@@ -16,7 +16,7 @@ function App({ themeMode, toggleTheme }) {
       <main>
         <section id="home"><Home /></section>
         <section id="about"><About /></section>
-        <section id="about"><Experience /></section>
+        <section id="experience"><Experience /></section>
         <section id="skills"><Skills /></section>
         <section id="projects"><Projects /></section>
         <section id="education"><Education /></section>

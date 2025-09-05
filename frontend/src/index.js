@@ -5,8 +5,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyle } from './globalStyles';
+
 function Root() {
   const [themeMode, setThemeMode] = useState('light');
+
   useEffect(() => {
     const saved = localStorage.getItem('theme');
     if (saved) setThemeMode(saved);
@@ -14,15 +16,20 @@ function Root() {
       setThemeMode('dark');
     }
   }, []);
+
   const toggleTheme = () => {
     const next = themeMode === 'light' ? 'dark' : 'light';
     setThemeMode(next);
     localStorage.setItem('theme', next);
   };
+
+  // Define isProd
+  const isProd = process.env.NODE_ENV === 'production';
+
   return (
     <ThemeProvider theme={themeMode === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <BrowserRouter basename="/--Portfolio">
+      <BrowserRouter basename={isProd ? "/--Portfolio" : "/"}>
         <App themeMode={themeMode} toggleTheme={toggleTheme} />
       </BrowserRouter>
     </ThemeProvider>
