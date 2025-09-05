@@ -79,9 +79,10 @@ const SocialBox = ({ themeMode, toggleTheme }) => {
       </IconLink>
 
       {/* Resume Download */}
-      <IconLink href="/Anurudha_Sarkar_resume.pdf" download>
-        <FaFileDownload />
+      <IconLink href={`${process.env.PUBLIC_URL}/Anurudha_Sarkar_resume.pdf`} download>
+      <FaFileDownload />
       </IconLink>
+
 
       {/* GitHub */}
       <IconLink
