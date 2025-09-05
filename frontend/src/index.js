@@ -23,16 +23,10 @@ function Root() {
     localStorage.setItem('theme', next);
   };
 
-  // Define isProd
-  const isProd = process.env.NODE_ENV === 'production';
-
   return (
     <ThemeProvider theme={themeMode === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
       <BrowserRouter basename={process.env.PUBLIC_URL || "/"}>
-      <App themeMode={themeMode} toggleTheme={toggleTheme} />
-      </BrowserRouter>
-
         <App themeMode={themeMode} toggleTheme={toggleTheme} />
       </BrowserRouter>
     </ThemeProvider>
