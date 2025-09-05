@@ -26,7 +26,7 @@ function Root() {
   return (
     <ThemeProvider theme={themeMode === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <BrowserRouter basename={process.env.PUBLIC_URL || "/"}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App themeMode={themeMode} toggleTheme={toggleTheme} />
       </BrowserRouter>
     </ThemeProvider>
