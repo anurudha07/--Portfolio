@@ -80,13 +80,13 @@ const SocialBox = ({ themeMode, toggleTheme }) => {
 
       {/* Resume Download */}
       <IconLink
-        href="/Anurudha_Sarkar_resume.pdf"
-        download
-        target="_blank"
-        rel="noopener noreferrer"
+      href="/Anurudha_Sarkar_resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
       >
-      <FaFileDownload />
+        <FaFileDownload />
       </IconLink>
+
 
 
 
