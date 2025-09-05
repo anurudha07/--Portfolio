@@ -48,14 +48,15 @@ const About = () => {
       </Content>
       <ButtonContainer variants={contentVariants}>
         <DownloadButton
-          href="/Anurudha_Sarkar_resume.pdf"
-          download
-          variants={buttonVariants}
-          whileHover={reduce ? {} : 'hover'}
-          whileTap={reduce ? {} : 'tap'}
-        >
-          Download CV
-        </DownloadButton>
+         href={`${process.env.PUBLIC_URL}/Anurudha_Sarkar_resume.pdf`}
+         download
+         variants={buttonVariants}
+         whileHover={reduce ? {} : 'hover'}
+         whileTap={reduce ? {} : 'tap'}
+      >
+         Download CV
+      </DownloadButton>
+
       </ButtonContainer>
     </Container>
   );
