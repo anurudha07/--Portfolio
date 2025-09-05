@@ -48,16 +48,16 @@ const About = () => {
       </Content>
       <ButtonContainer variants={contentVariants}>
         <DownloadButton
-          href="/Anurudha_Sarkar_resume.pdf"
-          download
-          variants={buttonVariants}
-          whileHover={reduce ? {} : 'hover'}
-          whileTap={reduce ? {} : 'tap'}
-          target="_blank"
-          rel="noopener noreferrer"
-         >
-           Download CV
-        </DownloadButton>
+           href="/Anurudha_Sarkar_resume.pdf"
+           variants={buttonVariants}
+           whileHover={reduce ? {} : 'hover'}
+           whileTap={reduce ? {} : 'tap'}
+           target="_blank"
+           rel="noopener noreferrer"
+        >
+            Download CV
+         </DownloadButton>
+
 
 
       </ButtonContainer>
