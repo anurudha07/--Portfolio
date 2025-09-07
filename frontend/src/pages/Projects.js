@@ -58,7 +58,7 @@ const Title = styled.h2`
 /* Grid — slightly wider cards */
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 320px); /* +20px wider */
+  grid-template-columns: repeat(2, 320px); /* +20px wider */
   gap: 1rem;
   justify-content: center;
   justify-items: center;
@@ -227,14 +227,7 @@ const projectList = [
     github: 'https://github.com/anuradha07/Noted',
     live: 'https://noted-5ahw.onrender.com/'
   },
-  {
-    title: 'Augbit | AI Email SaaS',
-    bullets: ['AI email revolution with GPT-4 integration, real-time sync transform email management into an intelligent, automated experience.'],
-    tech: ['Next.js','Stripe', 'openAI'],
-    image: img3,
-    github: 'https://github.com/anurudha07/Augbit',
-    
-  }
+
 ];
 
 const Projects = () => {
