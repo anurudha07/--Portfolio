@@ -1,13 +1,12 @@
-// src/pages/Home.js
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import coderAnimation from '../assets/coder.json'; // Lottie JSON animation file
+import coderAnimation from '../assets/coder.json'; 
 
 /* ------------------ STYLES ------------------ */
 
-/* Section — prevent horizontal and mobile vertical overflow */
+/* Section */
 const Section = styled.section`
   position: relative;
   width: 100%;
@@ -16,23 +15,20 @@ const Section = styled.section`
   background: ${({ theme }) => theme.colors.background};
   cursor: none;
 
-  /* stop horizontal overflow that causes right-shifts */
-  overflow-x: hidden;
-  /* on desktop allow natural vertical content, on mobile avoid extra page scroll */
-  overflow-y: auto;
+  /* completely remove scrollbars */
+  overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     min-height: 70vh;
     height: auto;
     cursor: auto;
-    /* crucial: hide any accidental extra scroll from decorative elements */
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;  /* hide any accidental mobile scroll */
     padding-bottom: 28px;
   }
 `;
 
-/* AnimationWrapper — keep Lottie inside viewport so it doesn't add scroll */
+
+/* AnimationWrapper */
 const AnimationWrapper = styled.div`
   position: absolute;
   bottom: 0;
@@ -56,7 +52,7 @@ const AnimationWrapper = styled.div`
   }
 `;
 
-/* Canvas for particle network - hidden on mobile to save vertical space & CPU */
+/* Canvas for particle network  */
 const Canvas = styled.canvas`
   position: absolute;
   inset: 0;
