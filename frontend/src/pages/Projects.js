@@ -224,7 +224,7 @@ const projectList = [
     bullets: ['Redis-powered faster note taking, background reminder system. Schedule smartly increase productivity.'],
     tech: ['Next.js', 'Node.js', 'BullMQ'],
     image: img8,
-    github: 'https://github.com/anuradha07/Noted',
+    github: 'https://github.com/anurudha07/Noted',
     live: 'https://noted-5ahw.onrender.com/'
   },
 
