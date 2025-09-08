@@ -221,7 +221,7 @@ const projectList = [
   },
   {
     title: 'Noted | Minimal Note Taking',
-    bullets: ['Redis-powered faster note taking, background reminder system. Schedule smartly increase productivity.'],
+    bullets: ['Mobile first note taking with built in reminder system, leveraging BullMQ & redis. Schedule smartly increase productivity.'],
     tech: ['Next.js', 'Node.js', 'BullMQ'],
     image: img8,
     github: 'https://github.com/anurudha07/Noted',
