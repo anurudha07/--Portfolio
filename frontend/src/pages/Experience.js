@@ -116,7 +116,7 @@ const Experience = () => {
       company: "Divergent Business Systems Pvt. Ltd. (DBS Group)",
       role: "Full Stack Developer",
       location: "India · Remote",
-      duration: "Mar 2024 – Aug 2025",
+      duration: "July 2024 – Aug 2025",
       logo: dbsLogo,
       bullets: [
         "Built REST APIs with Node.js & Express, improving data retrieval efficiency by 40%.",
