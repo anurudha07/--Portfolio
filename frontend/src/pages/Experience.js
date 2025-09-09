@@ -120,7 +120,7 @@ const Experience = () => {
       logo: dbsLogo,
       bullets: [
         "Built REST APIs with Node.js, improving data retrieval efficiency by 40%.",
-        "Implemented LMS features with Next.js; enrollment, assessments, and payments via Stripe.",
+        "Implemented LMS features like enrollment, assessments, and payments via Stripe.",
         "Streamlined frontend with Next.js & ensuring typesafety for production readiness with TypeScript.",
       ],
     },
