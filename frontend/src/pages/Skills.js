@@ -44,7 +44,7 @@ const skills = [
   { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postgresql.svg" },
   { name: "Redis", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/redis.svg" },
   { name: "AWS", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amazonaws.svg" },
-  { name: "Docker", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/docker.svg" },
+  { name: "shadcn/ui", logo: "https://seeklogo.com/images/S/shadcn-ui-logo-C081F2DA34-seeklogo.com.svg" },
   { name: "MongoDB", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mongodb.svg" },
   { name: "GitHub", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" },
 ];
