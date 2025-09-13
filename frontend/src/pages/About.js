@@ -44,7 +44,7 @@ const About = () => {
     >
       <Title variants={titleVariants}>{'About Me'}</Title>
       <Content variants={contentVariants}>
-        I am Full-Stack Developer building production web apps with Next.js, Node, TypeScript from shipping fast MVPs to scalable applications. I can contribute to your team immediately, find my cv at your convenience.
+        I am Full-Stack Developer building production web apps with Next.js, Node, TypeScript from shipping fast MVPs to scalable applicationswhile ensuring industry best practices. I can contribute to your team immediately, find my cv at your convenience.
       </Content>
       <ButtonContainer variants={contentVariants}>
         <DownloadButton
