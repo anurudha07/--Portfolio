@@ -126,7 +126,7 @@ const Title = styled.h1`
     -webkit-text-fill-color: initial;
     background-clip: initial;
     color: ${({ theme }) => theme.colors.text};
-    font-weight: 700;
+    font-weight: 400;
   }
 `;
 
