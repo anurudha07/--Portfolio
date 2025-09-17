@@ -52,6 +52,7 @@ const Title = styled.h2`
   font-size: 1.15rem;
   margin-bottom: 1rem;
   text-align: center;
+  font-weight: 400;
   color: ${({ theme }) => get(theme, 'text', theme.mode === 'dark' ? '#fff' : '#000')};
 `;
 
