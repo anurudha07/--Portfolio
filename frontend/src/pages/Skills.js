@@ -13,7 +13,7 @@ const Title = styled.h2`
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
 `;
 
 const Grid = styled(motion.div)`
