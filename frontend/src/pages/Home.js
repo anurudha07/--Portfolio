@@ -127,6 +127,7 @@ const Title = styled.h1`
     background-clip: initial;
     color: ${({ theme }) => theme.colors.text};
     font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
   }
 `;
 
