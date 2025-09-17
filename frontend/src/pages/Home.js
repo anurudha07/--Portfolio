@@ -119,7 +119,7 @@ const Title = styled.h1`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     /* disable gradient clipping on tiny screens (some mobile browsers render it invisibly) */
     background: none;
     -webkit-background-clip: initial;
@@ -127,7 +127,7 @@ const Title = styled.h1`
     background-clip: initial;
     color: ${({ theme }) => theme.colors.text};
     font-weight: 400;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
   }
 `;
 
