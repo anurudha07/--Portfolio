@@ -113,10 +113,10 @@ const Experience = () => {
 
   const jobs = [
     {
-      company: "Divergent Business Systems Pvt. Ltd. (DBS Group)",
+      company: "Freelance",
       role: "Full Stack Developer",
       location: "India · Remote",
-      duration: "Mar 2024 – Aug 2025",
+      duration: "Aug 2024 – Present",
       logo: dbsLogo,
       bullets: [
         "Developed an Inventory Management Dashboard with Next, multiple data grids and summaries. ",
