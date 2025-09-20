@@ -51,7 +51,13 @@ const Logo = styled.img`
     width: 30px;
     height: 30px;
   }
+
+  /* Minimal fix so the PNG shows clearly on dark backgrounds */
+  @media (prefers-color-scheme: dark) {
+    filter: invert(1) brightness(0.95) saturate(0.9);
+  }
 `;
+
 
 const Info = styled.div`
   flex: 1;
