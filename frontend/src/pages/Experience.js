@@ -143,7 +143,7 @@ const Experience = () => {
             <Info>
               <Company>{job.company}</Company>
               <Role>
-                {job.role} · {job.location}
+                {job.role} · <span style={{ display: "block" }}>{job.location}</span>
               </Role>
               <MobileDates>{job.duration}</MobileDates>
               <Bullets>
