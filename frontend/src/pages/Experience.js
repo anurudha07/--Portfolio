@@ -6,190 +6,209 @@ import dbsLogo from "../assets/logos/dbs.png";
 
 // ---------- Styled ----------
 const Container = styled.section`
-  max-width: 800px;
+  max-width: 880px;
   margin: 70px auto;
   padding: 0 1rem;
 `;
 
 const Title = styled.h2`
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-align: center;
-  font-weight: 400;
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.primary};
 `;
 
+/* Job row */
 const Job = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 1.5rem;
   gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 0.6rem 0.25rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 680px) {
     flex-direction: column;
+    gap: 0.5rem;
+  }
+`;
+
+/* Left column: logo + text */
+const Left = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex: 1;
+
+  @media (max-width: 680px) {
     align-items: flex-start;
     gap: 0.6rem;
   }
 `;
 
-const Left = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-  flex: 1;
-
-  /* stack logo above info on small screens to avoid cramped layout */
-  @media (max-width: 600px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-`;
-
 const Logo = styled.img`
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
   object-fit: cover;
   flex-shrink: 0;
+  background: transparent;
 
-  /* invert and brighten for dark mode (works with system dark and theme flag) */
+  /* Theme-driven inversion (if you use theme.isDark) */
   ${(props) => props.theme && props.theme.isDark && `filter: invert(1) brightness(1.2);`}
 
+  /* System preference fallback (covers devices where theme flag isn't set) */
   @media (prefers-color-scheme: dark) {
     filter: invert(1) brightness(1.2);
   }
 
-  @media (max-width: 600px) {
-    width: 30px;
-    height: 30px;
+  @media (max-width: 680px) {
+    width: 38px;
+    height: 38px;
   }
 `;
 
 const Info = styled.div`
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 `;
 
+/* Company name */
 const Company = styled.h3`
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   margin: 0;
   font-weight: 600;
   color: ${(props) => props.theme.colors.text};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (max-width: 680px) {
+    font-size: 0.95rem;
+  }
 `;
 
+/* Role and location */
 const Role = styled.p`
   font-size: 0.85rem;
   color: ${(props) => props.theme.colors.subtext};
-  margin: 0.2rem 0 0.4rem;
+  margin: 0.22rem 0 0.28rem;
+  line-height: 1.15;
 
-  @media (max-width: 600px) {
-    font-size: 0.78rem;
-    margin: 0.12rem 0 0.28rem;
+  @media (max-width: 680px) {
+    font-size: 0.8rem;
   }
 `;
 
-/* small span for the location so it breaks to the next line nicely */
 const Location = styled.span`
   display: block;
   font-size: 0.85rem;
-
-  @media (max-width: 600px) {
-    font-size: 0.78rem;
-  }
-`;
-
-const Bullets = styled.ul`
-  margin: 0.3rem 0 0;
-  padding-left: 1rem;
-  font-size: 0.8rem;
   color: ${(props) => props.theme.colors.subtext};
-  line-height: 1.35;
-  list-style-type: disc;
+  margin-top: 0.12rem;
 
-  li {
-    margin-bottom: 0.15rem;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 0.75rem;
-    padding-left: 0.85rem;
+  @media (max-width: 680px) {
+    font-size: 0.8rem;
   }
 `;
 
+/* Date shown on right for desktop */
 const Dates = styled.div`
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: ${(props) => props.theme.colors.subtext};
   white-space: nowrap;
-  min-width: 100px;
   text-align: right;
+  min-width: 110px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 680px) {
     display: none;
   }
 `;
 
-const MobileDates = styled.div`
+/* Mobile date shown under role for small screens */
+const MobileDate = styled.div`
   display: none;
+  font-size: 0.82rem;
+  color: ${(props) => props.theme.colors.subtext};
+  margin-top: 0.2rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 680px) {
     display: block;
-    font-size: 0.8rem;
-    color: ${(props) => props.theme.colors.subtext};
-    margin-bottom: 0.4rem;
   }
 `;
+
+/* Optional small description/bullets area (keeps consistent sizing) */
+const Details = styled.div`
+  margin-top: 0.35rem;
+  font-size: 0.86rem;
+  color: ${(props) => props.theme.colors.text};
+  opacity: 0.95;
+  line-height: 1.35;
+
+  @media (max-width: 680px) {
+    font-size: 0.82rem;
+  }
+`;
+
+/* animation variants */
+const variants = {
+  hidden: { opacity: 0, y: 8 },
+  visible: { opacity: 1, y: 0 },
+};
 
 // ---------- Component ----------
 const Experience = () => {
   const reduce = usePrefersReducedMotion();
-  const variants = { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } };
 
   const jobs = [
     {
+      logo: dbsLogo,
       company: "Freelance",
       role: "Full Stack Developer",
       location: "India · Remote",
       duration: "Aug 2025 – Present",
-      logo: dbsLogo,
-      bullets: [
-        "Developed an Inventory Management Dashboard using Next.js with advanced data grids, filtering, summaries, and real-time product views",
-        "Engineered Node.js backend with Prisma and PostgreSQL, designing schemas and building performant REST APIs, secured with JWT + Google OAuth authentication.",
-        "Deployed and managed AWS infrastructure (EC2, RDS, S3, API Gateway), ensuring scalability with production-ready operations.",
-      ],
+      details:
+        "Built Inventory Management Dashboard using Next.js, Tailwind, and Node.js; deployed on AWS (EC2, RDS, S3) with production-ready configuration.",
     },
   ];
 
   return (
-    <Container>
+    <Container as={motion.section}>
       <Title>Work Experience</Title>
-      {jobs.map((job, idx) => (
-        <Job
-          key={idx}
-          initial={reduce ? {} : "hidden"}
-          whileInView={reduce ? {} : "visible"}
-          viewport={{ once: true, amount: 0.2 }}
-          variants={variants}
-          transition={{ duration: 0.5, delay: idx * 0.1 }}
-        >
-          <Left>
-            {job.logo && <Logo src={job.logo} alt={`${job.company} logo`} />}
-            <Info>
-              <Company>{job.company}</Company>
-              <Role>
-                {job.role} · <Location>{job.location}</Location>
-              </Role>
-              <MobileDates>{job.duration}</MobileDates>
-              <Bullets>
-                {job.bullets.map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-              </Bullets>
-            </Info>
-          </Left>
-          <Dates>{job.duration}</Dates>
-        </Job>
-      ))}
+
+      <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+        {jobs.map((job, i) => (
+          <Job
+            as="li"
+            key={i}
+            initial={reduce ? {} : "hidden"}
+            whileInView={reduce ? {} : "visible"}
+            viewport={{ once: true, amount: 0.2 }}
+            variants={variants}
+            transition={{ duration: 0.45, delay: i * 0.08 }}
+          >
+            <Left>
+              {job.logo && <Logo src={job.logo} alt={`${job.company} logo`} />}
+              <Info>
+                <Company>{job.company}</Company>
+                <Role>
+                  {job.role}
+                  <Location>{job.location}</Location>
+                </Role>
+
+                {/* mobile date (visible only on small screens) */}
+                <MobileDate>{job.duration}</MobileDate>
+
+                {/* short project summary (optional) */}
+                <Details>{job.details}</Details>
+              </Info>
+            </Left>
+
+            {/* desktop date (hidden on mobile) */}
+            <Dates>{job.duration}</Dates>
+          </Job>
+        ))}
+      </ul>
     </Container>
   );
 };
