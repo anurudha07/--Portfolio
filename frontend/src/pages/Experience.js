@@ -1,10 +1,10 @@
+// src/pages/Experience.js
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { motion } from "framer-motion";
 import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
 import dbsLight from "../assets/logos/dbs-light.png";
 import dbsDark from "../assets/logos/dbs-dark.png";
-
 
 // ---------- Styled ----------
 const Container = styled.section`
@@ -27,6 +27,7 @@ const Logo = styled.img`
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  display: block;
 
   @media (max-width: 600px) {
     width: 30px;
@@ -54,19 +55,6 @@ const Left = styled.div`
   gap: 0.8rem;
   flex: 1;
 `;
-
-const jobs = [
-  {
-    company: "Freelance",
-    role: "Full Stack Developer",
-    location: "India · Remote",
-    duration: "Aug 2025 – Present",
-    logoLight: dbsLight,
-    logoDark: dbsDark,
-    bullets: [ /* ... */ ],
-  },
-];
-
 
 const Info = styled.div`
   flex: 1;
@@ -121,12 +109,8 @@ const MobileDates = styled.div`
   }
 `;
 
-// ---------- Component ----------
-const Experience = () => {
-  const reduce = usePrefersReducedMotion();
-  const variants = { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } };
-
-  const jobsData = [
+// ---------- Data ----------
+const jobs = [
   {
     company: "Freelance",
     role: "Full Stack Developer",
@@ -142,6 +126,11 @@ const Experience = () => {
   },
 ];
 
+// ---------- Component ----------
+const Experience = () => {
+  const reduce = usePrefersReducedMotion();
+  const theme = useTheme();
+  const variants = { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } };
 
   return (
     <Container>
@@ -156,12 +145,12 @@ const Experience = () => {
           transition={{ duration: 0.5, delay: idx * 0.1 }}
         >
           <Left>
-            {job.logoLight && job.logoDark && (
-            <Logo
-            src={job.logoLight && job.logoDark ? (props.theme.mode === "dark" ? job.logoLight : job.logoDark) : job.logoDark}
-            alt={`${job.company} logo`}
-            />
-          )}
+            {(job.logoLight || job.logoDark) && (
+              <Logo
+                src={theme && theme.mode === "dark" ? job.logoLight : job.logoDark || job.logoLight}
+                alt={`${job.company} logo`}
+              />
+            )}
 
             <Info>
               <Company>{job.company}</Company>
