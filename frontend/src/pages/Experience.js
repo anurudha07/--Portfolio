@@ -120,7 +120,7 @@ const Experience = () => {
       logo: dbsLogo,
       bullets: [
         "Developed an Inventory Management Dashboard using Next.js with advanced data grids, filtering, summaries, and real-time product views",
-        "Engineered a Node.js backend with Prisma and PostgreSQL, designing schemas and building performant REST APIs with JWT + Google OAuth authentication.",
+        "Engineered a Node.js backend with Prisma and PostgreSQL, designing schemas and building performant REST APIs, secured with JWT + Google OAuth authentication.",
         "Deployed and managed AWS infrastructure (EC2, RDS, S3, API Gateway), ensuring scalability with production-ready operations.",
       ],
     },
