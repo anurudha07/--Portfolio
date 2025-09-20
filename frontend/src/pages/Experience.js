@@ -47,13 +47,23 @@ const Logo = styled.img`
   object-fit: cover;
   flex-shrink: 0;
 
+  /* tiny visible background so transparent/white portions remain readable */
+  background: ${(p) => (p.theme.mode === "dark" ? "rgba(255,255,255,0.06)" : "transparent")};
+  padding: 4px; /* creates a small circular badge */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  display: block;
+
   @media (max-width: 600px) {
     width: 30px;
     height: 30px;
+    padding: 3px;
   }
 
-  /* Proper theme-based logo adjustment for dark mode */
-  filter: ${(props) => (props.theme === darkTheme ? 'invert(1) brightness(0.95) saturate(0.9)' : 'none')};
+  /* apply invert only in dark mode and nudge brightness/contrast */
+  filter: ${(p) =>
+    p.theme.mode === "dark"
+      ? "invert(1) brightness(1.05) contrast(1.05) saturate(0.95)"
+      : "none"};
 `;
 
 
