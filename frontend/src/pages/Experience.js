@@ -1,4 +1,3 @@
-// src/pages/Experience.js
 import React from "react";
 import styled, { useTheme } from "styled-components";
 import { motion } from "framer-motion";
@@ -29,9 +28,16 @@ const Logo = styled.img`
   flex-shrink: 0;
   display: block;
 
+  /* tiny neutral badge so logo never disappears on extreme backgrounds */
+  background: ${(p) => (p.theme?.mode === "light" ? "rgba(255,255,255,0.85)" : "rgba(0,0,0,0.12)")};
+  padding: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  border: 1px solid ${(p) => (p.theme?.mode === "light" ? "rgba(0,0,0,0.06)" : "rgba(255,255,255,0.06)")};
+
   @media (max-width: 600px) {
     width: 30px;
     height: 30px;
+    padding: 3px;
   }
 `;
 
@@ -60,6 +66,7 @@ const Info = styled.div`
   flex: 1;
 `;
 
+/* Company stays the same */
 const Company = styled.h3`
   font-size: 0.95rem;
   margin: 0;
@@ -67,12 +74,19 @@ const Company = styled.h3`
   color: ${(props) => props.theme.colors.text};
 `;
 
+/* Role style preserved exactly (no font-size/style change) */
 const Role = styled.p`
   font-size: 0.85rem;
   color: ${(props) => props.theme.colors.subtext};
-  margin: 0.2rem 0 0.4rem;
+  margin: 0.2rem 0 0;
 `;
 
+/* Location uses same style as Role (keeps font and look identical) but on the next line */
+const Location = styled(Role)`
+  margin-top: 0.18rem;
+`;
+
+/* Bullets unchanged */
 const Bullets = styled.ul`
   margin: 0.3rem 0 0;
   padding-left: 1rem;
@@ -129,43 +143,50 @@ const jobs = [
 // ---------- Component ----------
 const Experience = () => {
   const reduce = usePrefersReducedMotion();
-  const theme = useTheme();
+  const theme = useTheme(); // reads theme.mode ("light" | "dark")
   const variants = { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } };
 
   return (
     <Container>
       <Title>Work Experience</Title>
-      {jobs.map((job, idx) => (
-        <Job
-          key={idx}
-          initial={reduce ? {} : "hidden"}
-          whileInView={reduce ? {} : "visible"}
-          viewport={{ once: true, amount: 0.2 }}
-          variants={variants}
-          transition={{ duration: 0.5, delay: idx * 0.1 }}
-        >
-          <Left>
-            {(job.logoLight || job.logoDark) && (
-              <Logo src={theme?.mode === "dark" ? job.logoLight : job.logoDark} alt={`${job.company} logo`} />
-              )}
 
+      {jobs.map((job, idx) => {
+        // *** IMPORTANT: inverted mapping so dbs-light appears in LIGHT mode, per your request ***
+        const logoSrc = theme?.mode === "light" ? job.logoLight : job.logoDark;
 
-            <Info>
-              <Company>{job.company}</Company>
-              <Role>
-                {job.role} · {job.location}
-              </Role>
-              <MobileDates>{job.duration}</MobileDates>
-              <Bullets>
-                {job.bullets.map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-              </Bullets>
-            </Info>
-          </Left>
-          <Dates>{job.duration}</Dates>
-        </Job>
-      ))}
+        return (
+          <Job
+            key={idx}
+            initial={reduce ? {} : "hidden"}
+            whileInView={reduce ? {} : "visible"}
+            viewport={{ once: true, amount: 0.2 }}
+            variants={variants}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+          >
+            <Left>
+              {(job.logoLight || job.logoDark) && <Logo src={logoSrc || job.logoDark} alt={`${job.company} logo`} />}
+
+              <Info>
+                <Company>{job.company}</Company>
+
+                {/* Role on first line, Location on next line (same font/style as Role) */}
+                <Role>{job.role}</Role>
+                <Location>{job.location}</Location>
+
+                <MobileDates>{job.duration}</MobileDates>
+
+                <Bullets>
+                  {job.bullets.map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
+                </Bullets>
+              </Info>
+            </Left>
+
+            <Dates>{job.duration}</Dates>
+          </Job>
+        );
+      })}
     </Container>
   );
 };
