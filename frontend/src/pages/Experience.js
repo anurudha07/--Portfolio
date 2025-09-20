@@ -46,25 +46,22 @@ const Logo = styled.img`
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-
-  /* tiny visible background so transparent/white portions remain readable */
-  background: ${(p) => (p.theme.mode === "dark" ? "rgba(255,255,255,0.06)" : "transparent")};
-  padding: 4px; /* creates a small circular badge */
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   display: block;
 
   @media (max-width: 600px) {
     width: 30px;
     height: 30px;
-    padding: 3px;
   }
 
-  /* apply invert only in dark mode and nudge brightness/contrast */
+  /* Minimal fix: invert only partially and adjust brightness */
   filter: ${(p) =>
     p.theme.mode === "dark"
-      ? "invert(1) brightness(1.05) contrast(1.05) saturate(0.95)"
+      ? "invert(0.9) brightness(1.2) contrast(1.1) saturate(1.1)"
       : "none"};
+  background: ${(p) => (p.theme.mode === "dark" ? "rgba(255,255,255,0.08)" : "transparent")};
+  padding: 2px; /* tiny badge so it never fully disappears */
 `;
+
 
 
 
