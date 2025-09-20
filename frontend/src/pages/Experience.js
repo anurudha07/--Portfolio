@@ -146,11 +146,9 @@ const Experience = () => {
         >
           <Left>
             {(job.logoLight || job.logoDark) && (
-              <Logo
-                src={theme && theme.mode === "dark" ? job.logoLight : job.logoDark || job.logoLight}
-                alt={`${job.company} logo`}
-              />
-            )}
+              <Logo src={theme?.mode === "dark" ? job.logoLight : job.logoDark} alt={`${job.company} logo`} />
+              )}
+
 
             <Info>
               <Company>{job.company}</Company>
