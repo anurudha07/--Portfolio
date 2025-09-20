@@ -54,7 +54,7 @@ const educations = [
     school: "MAKAUT University",
     degree: "B.Tech. in Computer Science",
     period: "Sep 2021 – June 2025",
-    details: "Graduated with 8.1 CGPA",
+    details: "Graduated with 8.02 CGPA",
   },
   {
     school: "The St. Xavier's School",
