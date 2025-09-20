@@ -52,11 +52,10 @@ const Logo = styled.img`
     height: 30px;
   }
 
-  /* Minimal fix so the PNG shows clearly on dark backgrounds */
-  @media (prefers-color-scheme: dark) {
-    filter: invert(1) brightness(0.95) saturate(0.9);
-  }
+  /* Proper theme-based logo adjustment for dark mode */
+  filter: ${(props) => (props.theme === darkTheme ? 'invert(1) brightness(0.95) saturate(0.9)' : 'none')};
 `;
+
 
 
 const Info = styled.div`
