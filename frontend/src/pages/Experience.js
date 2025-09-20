@@ -135,9 +135,9 @@ const Experience = () => {
     logoLight: dbsLight,
     logoDark: dbsDark,
     bullets: [
-      "Developed an Inventory Management Dashboard using Next.js with advanced data grids, filtering, summaries, and efficient product views",
-      "Engineered Node backend with Prisma and PostgreSQL, designing schemas and building performant REST APIs, secured with JWT + Google OAuth.",
-      "Deployed and managed AWS infrastructure (EC2, RDS, S3, API Gateway), ensuring scalability with production-ready operations.",
+      "Developed an Inventory Management Dashboard using Next.js with multiple data grids and summaries.",
+      "Engineered Node backend with Prisma and PostgreSQL, building performant REST APIs.",
+      "Deployed and managed AWS infrastructure, ensuring scalability with production-readiness.",
     ],
   },
 ];
