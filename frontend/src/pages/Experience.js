@@ -113,15 +113,15 @@ const Experience = () => {
 
   const jobs = [
     {
-      company: "Divergent Business Systems Pvt. Ltd. (DBS Group)",
+      company: "Freelance",
       role: "Full Stack Developer",
       location: "India · Remote",
-      duration: "July 2024 – Aug 2025",
+      duration: "Aug 2025 – Present",
       logo: dbsLogo,
       bullets: [
-        "Built REST APIs on Node, improving data retrieval efficiency by 40%.",
-        "Implemented LMS features like enrollment, assessments, and payments via Stripe.",
-        "Streamlined web app with Next.js & ensuring type safety for production readiness with TypeScript.",
+        "Developed an Inventory Management Dashboard using Next.js with advanced data grids, filtering, summaries, and real-time product views",
+        "Engineered a Node.js backend with Prisma and PostgreSQL, designing schemas and building performant REST APIs with JWT + Google OAuth authentication.",
+        "Deployed and managed AWS infrastructure (EC2, RDS, S3, API Gateway), ensuring scalability with production-ready operations.",
       ],
     },
   ];
