@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
-import dbsLogo from "../assets/logos/dbs.png";
+import dbsLight from "../assets/logos/dbs-light.png";
+import dbsDark from "../assets/logos/dbs-dark.png";
+
 
 // ---------- Styled ----------
 const Container = styled.section`
@@ -17,6 +19,19 @@ const Title = styled.h2`
   text-align: center;
   font-weight: 400;
   color: ${(props) => props.theme.colors.text};
+`;
+
+const Logo = styled.img`
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+
+  @media (max-width: 600px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 const Job = styled(motion.div)`
@@ -40,29 +55,17 @@ const Left = styled.div`
   flex: 1;
 `;
 
-const Logo = styled.img`
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  display: block;
-
-  @media (max-width: 600px) {
-    width: 30px;
-    height: 30px;
-  }
-
-  /* Minimal fix: invert only partially and adjust brightness */
-  filter: ${(p) =>
-    p.theme.mode === "dark"
-      ? "invert(0.9) brightness(1.2) contrast(1.1) saturate(1.1)"
-      : "none"};
-  background: ${(p) => (p.theme.mode === "dark" ? "rgba(255,255,255,0.08)" : "transparent")};
-  padding: 2px; /* tiny badge so it never fully disappears */
-`;
-
-
+const jobs = [
+  {
+    company: "Freelance",
+    role: "Full Stack Developer",
+    location: "India · Remote",
+    duration: "Aug 2025 – Present",
+    logoLight: dbsLight,
+    logoDark: dbsDark,
+    bullets: [ /* ... */ ],
+  },
+];
 
 
 const Info = styled.div`
@@ -123,20 +126,22 @@ const Experience = () => {
   const reduce = usePrefersReducedMotion();
   const variants = { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } };
 
-  const jobs = [
-    {
-      company: "Freelance",
-      role: "Full Stack Developer",
-      location: "India · Remote",
-      duration: "Aug 2025 – Present",
-      logo: dbsLogo,
-      bullets: [
-        "Developed an Inventory Management Dashboard using Next.js with advanced data grids, filtering, summaries, and effecient product views",
-        "Engineered Node backend with Prisma and PostgreSQL, designing schemas and building performant REST APIs, secured with JWT + Google OAuth.",
-        "Deployed and managed AWS infrastructure (EC2, RDS, S3, API Gateway), ensuring scalability with production-ready operations.",
-      ],
-    },
-  ];
+  const jobsData = [
+  {
+    company: "Freelance",
+    role: "Full Stack Developer",
+    location: "India · Remote",
+    duration: "Aug 2025 – Present",
+    logoLight: dbsLight,
+    logoDark: dbsDark,
+    bullets: [
+      "Developed an Inventory Management Dashboard using Next.js with advanced data grids, filtering, summaries, and efficient product views",
+      "Engineered Node backend with Prisma and PostgreSQL, designing schemas and building performant REST APIs, secured with JWT + Google OAuth.",
+      "Deployed and managed AWS infrastructure (EC2, RDS, S3, API Gateway), ensuring scalability with production-ready operations.",
+    ],
+  },
+];
+
 
   return (
     <Container>
@@ -151,7 +156,13 @@ const Experience = () => {
           transition={{ duration: 0.5, delay: idx * 0.1 }}
         >
           <Left>
-            {job.logo && <Logo src={job.logo} alt={`${job.company} logo`} />}
+            {job.logoLight && job.logoDark && (
+            <Logo
+            src={job.logoLight && job.logoDark ? (props.theme.mode === "dark" ? job.logoLight : job.logoDark) : job.logoDark}
+            alt={`${job.company} logo`}
+            />
+          )}
+
             <Info>
               <Company>{job.company}</Company>
               <Role>
