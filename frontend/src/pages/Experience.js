@@ -38,6 +38,13 @@ const Left = styled.div`
   align-items: flex-start;
   gap: 0.8rem;
   flex: 1;
+
+  /* stack logo above info on small screens to avoid cramped layout */
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 `;
 
 const Logo = styled.img`
@@ -46,6 +53,13 @@ const Logo = styled.img`
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+
+  /* invert and brighten for dark mode (works with system dark and theme flag) */
+  ${(props) => props.theme && props.theme.isDark && `filter: invert(1) brightness(1.2);`}
+
+  @media (prefers-color-scheme: dark) {
+    filter: invert(1) brightness(1.2);
+  }
 
   @media (max-width: 600px) {
     width: 30px;
@@ -68,6 +82,21 @@ const Role = styled.p`
   font-size: 0.85rem;
   color: ${(props) => props.theme.colors.subtext};
   margin: 0.2rem 0 0.4rem;
+
+  @media (max-width: 600px) {
+    font-size: 0.78rem;
+    margin: 0.12rem 0 0.28rem;
+  }
+`;
+
+/* small span for the location so it breaks to the next line nicely */
+const Location = styled.span`
+  display: block;
+  font-size: 0.85rem;
+
+  @media (max-width: 600px) {
+    font-size: 0.78rem;
+  }
 `;
 
 const Bullets = styled.ul`
@@ -80,6 +109,11 @@ const Bullets = styled.ul`
 
   li {
     margin-bottom: 0.15rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.75rem;
+    padding-left: 0.85rem;
   }
 `;
 
@@ -143,7 +177,7 @@ const Experience = () => {
             <Info>
               <Company>{job.company}</Company>
               <Role>
-                {job.role} · <span style={{ display: "block" }}>{job.location}</span>
+                {job.role} · <Location>{job.location}</Location>
               </Role>
               <MobileDates>{job.duration}</MobileDates>
               <Bullets>
