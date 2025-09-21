@@ -119,7 +119,7 @@ const Experience = () => {
       duration: "Aug 2024 – Present",
       logo: dbsLogo,
       bullets: [
-        "Developed an Inventory Management Dashboard with Next, multiple data grids and summaries. ",
+        "Implemented Next.js frontend with reusable components, reducing code redundancy. ",
         "Engineered Node backend with Prisma and PostgreSQL, building performant REST APIs.",
         "Deployed and managed AWS infrastructure, ensuring scalability with production-readiness.",
       ],
