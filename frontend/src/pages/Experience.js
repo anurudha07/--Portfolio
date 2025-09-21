@@ -113,8 +113,8 @@ const Experience = () => {
 
   const jobs = [
     {
-      company: "Freelance",
-      role: "Full Stack Developer",
+      company: "Full Stack Developer",
+      role: "Freelance",
       location: "India · Remote",
       duration: "Aug 2024 – Present",
       logo: dbsLogo,
