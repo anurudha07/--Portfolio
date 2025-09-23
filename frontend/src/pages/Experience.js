@@ -121,7 +121,7 @@ const Experience = () => {
       bullets: [
         "Implemented Next.js frontend with reusable components, reducing code redundancy. ",
         "Engineered Node backend with Prisma and PostgreSQL, building performant REST APIs.",
-        "Deployed and managed AWS infrastructure, ensuring scalability with production-readiness.",
+        "Deployed and managed cloud infrastructure, ensuring scalability with production-readiness.",
       ],
     },
   ];
