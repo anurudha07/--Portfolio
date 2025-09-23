@@ -214,7 +214,7 @@ const projectList = [
   {
     title: 'Rental',
     bullets: [
-      'Production-grade rental marketplace with AWS cloud infrastructure, interactive property mapping, and advanced location-based search.'
+      'Production-grade rental marketplace with infrastructure, interactive property mapping, and advanced location-based search.'
     ],
     tech: ['Next.js', 'Typescript', 'PostgreSQL', 'Node',],
     image: img7,
