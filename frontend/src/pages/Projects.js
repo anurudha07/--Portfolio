@@ -218,7 +218,8 @@ const projectList = [
     ],
     tech: ['Next.js', 'Typescript', 'PostgreSQL', 'Node',],
     image: img7,
-    github: 'https://github.com/anurudha07/Rental'
+    github: 'https://github.com/anurudha07/Rental',
+    live: 'https://rental-3psq.onrender.com/'
   },
   {
     title: 'Noted | Minimal Note Taking',
