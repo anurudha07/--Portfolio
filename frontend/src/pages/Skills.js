@@ -40,7 +40,7 @@ const skills = [
   { name: "TypeScript", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/typescript.svg" },
   { name: "Next.js", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nextdotjs.svg" },
   { name: "Node.js", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg" },
-  { name: "REST API", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/rest.svg" },
+  { name: "Nest.js", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nestjs.svg" },
   { name: "Prisma", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/prisma.svg" },
   { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postgresql.svg" },
   { name: "AWS", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amazonaws.svg" },
