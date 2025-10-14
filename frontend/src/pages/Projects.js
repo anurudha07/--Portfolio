@@ -219,7 +219,7 @@ const projectList = [
     tech: ['Next.js', 'Typescript', 'PostgreSQL', 'Node',],
     image: img7,
     github: 'https://github.com/anurudha07/Rental',
-    live: 'https://rental-3psq.onrender.com/'
+    live: 'https://rental-iota-three.vercel.app'
   },
   {
     title: 'Noted | Minimal Note Taking',
@@ -227,7 +227,7 @@ const projectList = [
     tech: ['Next.js', 'Node.js', 'BullMQ'],
     image: img8,
     github: 'https://github.com/anurudha07/Noted',
-    live: 'https://noted-5ahw.onrender.com/'
+    live: 'https://noted-ivory.vercel.app/'
   },
 
 ];
