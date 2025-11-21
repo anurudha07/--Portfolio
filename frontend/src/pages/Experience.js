@@ -114,7 +114,7 @@ const Experience = () => {
   const jobs = [
     {
       company: "Full Stack Developer",
-      role: "Freelance",
+      role: "",
       location: "India · Remote",
       duration: "Sept 2025 – Present",
       logo: dbsLogo,
