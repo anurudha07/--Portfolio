@@ -116,7 +116,7 @@ const Experience = () => {
       company: "Full Stack Developer",
       role: "",
       location: "India · Remote",
-      duration: "Sept 2025 – Present",
+      duration: " – Present",
       logo: dbsLogo,
       bullets: [
         "Implemented Next.js frontend with reusable components, reducing code redundancy. ",
