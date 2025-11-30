@@ -7,7 +7,7 @@ import Skills from './pages/Skills';
 import Education from './pages/Education';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-// import Experience from './pages/Experience';
+import Experience from './pages/Experience';
 
 function App({ themeMode, toggleTheme }) {
   return (
@@ -16,7 +16,7 @@ function App({ themeMode, toggleTheme }) {
       <main>
         <section id="home"><Home /></section>
         <section id="about"><About /></section>
-        // <section id="experience"><Experience /></section>
+        <section id="experience"><Experience /></section>
         <section id="skills"><Skills /></section>
         <section id="projects"><Projects /></section>
         <section id="education"><Education /></section>
