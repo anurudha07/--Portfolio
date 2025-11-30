@@ -43,7 +43,6 @@ const skills = [
   { name: "Prisma", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/prisma.svg" },
   { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postgresql.svg" },
   { name: "AWS", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amazonaws.svg" },
-  { name: "Docker", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/docker.svg" },
   { name: "MongoDB", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mongodb.svg" },
   { name: "GitHub", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" },
 ];
